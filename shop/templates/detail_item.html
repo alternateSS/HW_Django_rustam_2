@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    {% csrf_token %}
+    <fieldset>
+       <legend><h3>{{ item.name }}</h3></legend>
+       <legend><h3>{{ item.price }}</h3></legend>
+    {% for purchase in item.purch.all %}
+<!--        <input type="radio" name="purchase" id="purchase_{{ purchase.id }}" value="{{ purchase.id }}"/>-->
+        <label>{{ purchase.name }}</label>
+    {% endfor %}
+    </fieldset>
+<!--    <input type="submit" value="Проголосовать"/>-->
+
+
+
+</body>
+</html>
